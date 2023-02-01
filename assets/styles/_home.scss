@@ -1,0 +1,26 @@
+.ingenieur-img {
+    clip-path: ellipse(50% 33%);
+    max-width: 15rem;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.home-img {
+    width: 50%;
+}
+
+@media screen and (max-width: 634px) {
+    .home-img {
+        width: 100%;
+    }
+
+    .home-description {
+        display: none;
+    }
+
+    .ingenieur-img {
+        width: 100%;
+    }
+}

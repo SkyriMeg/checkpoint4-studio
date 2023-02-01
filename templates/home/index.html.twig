@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ website }}
+	- Accueil
+{% endblock %}
+
+{% block body %}
+	<div class="home">
+		<div class="text-center">
+			<img src="https://images.pexels.com/photos/8198567/pexels-photo-8198567.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="home-img rounded">
+			<h1 class="mb-5">
+				<strong>Meg</strong>
+				Studio</h1>
+		</div>
+
+		<h2 class="text-uppercase">Le studio</h2>
+		<div class="lign mb-4"></div>
+
+		<p>Situé au coeur de Bordeaux, notre studio est composé d'une régie ainsi que deux cabines d'enregistrement.</p>
+		<div class="d-flex justify-content-around">
+			<img src="https://images.pexels.com/photos/4988137/pexels-photo-4988137.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Régie" class="w-25 rounded">
+
+			<img src="https://images.pexels.com/photos/4087997/pexels-photo-4087997.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Cabine instruments" class="w-25 rounded">
+
+			<img src="https://images.pexels.com/photos/3990842/pexels-photo-3990842.jpeg" alt="Cabine voix" class="w-25 rounded">
+		</div>
+		<div class="d-flex justify-content-around mb-5">
+			<div class="home-description">Régie</div>
+			<div class="home-description">Cabine instruments</div>
+			<div class="home-description">Cabine voix</div>
+		</div>
+
+
+		<h2 class="text-uppercase">L'équipe</h2>
+		<div class="lign mb-4"></div>
+
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-sm-10 col-md-6 col-lg-6 mb-2">
+					<img class="ingenieur-img w-25" src="https://images.pexels.com/photos/9419241/pexels-photo-9419241.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Jean-François Bestfrit">
+					<h4>Jean-François Bestfrit</h4>
+					<br>Bassiste passionné, Jean-François a souhaité pousser plus loin sa passion et passer derrière les consoles pour faire vivre vos projets musicaux !
+				</div>
+
+				<div class="col-sm-10 col-md-6 col-lg-6">
+					<img class="ingenieur-img w-25" src="https://images.pexels.com/photos/7626338/pexels-photo-7626338.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Hayley Williams">
+					<h4>Hayley Williams</h4>
+					<br>Hayley s'est lancée dans la musique grâce au chant dans un célèbre groupe de rock américain, puis s'est formée à la prise de son et mixage dans les plus grands studios, avant de nous rejoindre !
+				</div>
+			</div>
+		</div>
+
+		<h2 id="tarifs" class="text-uppercase">Les tarifs</h2>
+		<div class="lign mb-4"></div>
+		{% for service in services %}
+			<ul>
+				<li>{{ service.name }}
+					:
+					{{ service.price }}€</li>
+			</ul>
+		{% endfor %}
+		<br><small class="italic">*Les prix sont sous réserve d'un devis plus précis, établi par nos ingénieurs son.</small>
+
+	</div>
+{% endblock %}

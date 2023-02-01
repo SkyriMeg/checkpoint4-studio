@@ -1,1 +1,32 @@
-@import "~bootstrap/scss/bootstrap";
+body {
+    background-color: $black;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: $first-title;
+    font-family: $typo;
+}
+
+.home {
+    margin: 3rem;
+}
+
+h1 {
+    text-align: center;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    color: $first-title;
+}
+
+h2 {
+    color: $second-title;
+    margin-top: 5rem;
+}
+
+.lign {
+    border-top: 1px solid $second-title;
+    width: 21.87rem;
+}
