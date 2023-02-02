@@ -4,12 +4,15 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
-    color: $first-title;
+    color: $first-color;
     font-family: $typo;
 }
 
 .home {
-    margin: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    margin-right: 3rem;
+    margin-left: 3rem;
 }
 
 h1 {
@@ -18,15 +21,27 @@ h1 {
     margin-left: 2rem;
     margin-top: 1rem;
     margin-bottom: 2rem;
-    color: $first-title;
+    color: $first-color;
 }
 
 h2 {
-    color: $second-title;
+    color: $second-color;
     margin-top: 5rem;
 }
 
+h4 {
+    color: $second-color;
+}
+
 .lign {
-    border-top: 1px solid $second-title;
+    border-top: 1px solid $second-color;
     width: 21.87rem;
+}
+
+.second-color {
+    color: $second-color;
+}
+
+.button-ok {
+    background-color: $second-color;
 }

@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Equipement{% endblock %}
+
+{% block body %}
+    <div class="home">
+        <h1><strong>{{ equipment.brand.name }}</strong> {{ equipment.model }}</h1>
+
+        <div class="mb-3"><img {{ equipment.picture }} alt="{{ equipment.model }}"></div>
+
+        <h3 class="second-color">{{ equipment.category.name }} {{ equipment.type.name }}</h3>
+        <div class="lign mb-4"></div>
+
+        <p>{{ equipment.description }}</p>
+
+        <a class="btn button-ok" href="{{ path('app_equipment_presentation') }}">Retour</a>
+
+    </div>
+{% endblock %}
