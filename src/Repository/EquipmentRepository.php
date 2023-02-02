@@ -21,6 +21,25 @@ class EquipmentRepository extends ServiceEntityRepository
         parent::__construct($registry, Equipment::class);
     }
 
+    //@TODO Créer une méthode pour ne sortir que les 3 premiers de chaque catégorie
+    public function findFirstThreeByEquip(Equipment $equipment): array
+    {
+        $queryBuilder = $this->createQueryBuilder('e')
+            ->join('e.category', 'c')
+            ->join('e.brand', 'b')
+            ->join('e.type', 't')
+            ->where('c.name = :equip')
+            ->setParameter('equipment', $equipment)
+            ->orderBy('e.id', 'ASC')
+            ->setMaxResults(3)
+            ->addSelect('e')
+            ->addSelect('c')
+            ->addSelect('b')
+            ->addSelect('t')
+            ->getQuery();
+        return $queryBuilder->getResult();
+    }
+
     public function save(Equipment $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
