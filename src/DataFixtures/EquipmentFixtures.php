@@ -25,7 +25,55 @@ class EquipmentFixtures extends Fixture implements DependentFixtureInterface
             'type' => 'type_électrique',
             'description' => 'Un son clean d\'une clarté exceptionnelle !',
             'picture' => 'assets/images/fender-strat.jpeg',
-        ]
+        ],
+        [
+            'category' => 'category_Microphone',
+            'brand' => 'brand_Shure',
+            'model' => 'SM58',
+            'type' => 'type_dynamique',
+            'description' => 'Le micro indestructible le plus polyvalent pour tout type de prise de son.',
+            'picture' => '',
+        ],
+        [
+        'category' => 'category_Batterie',
+        'brand' => 'brand_Roland',
+        'model' => 'TD17-KVX V-Drums',
+        'type' => 'type_dynamique',
+        'description' => 'Une batterie électronique fidèle au ressenti d\'une acoustique, améliorée avec de multiple fonctionnalités !',
+        'picture' => '',
+    ],
+        [
+            'category' => 'category_Logiciel',
+            'brand' => 'brand_Avid',
+            'model' => 'ProTools 12',
+            'type' => 'type_numérique',
+            'description' => 'Le top des logiciels pour les enregistrements studios professionnels.',
+            'picture' => '',
+        ],
+        [
+            'category' => 'category_Piano',
+            'brand' => 'brand_Yamaha',
+            'model' => 'Arius YDP-52',
+            'type' => 'type_numérique',
+            'description' => 'L’alliance parfaite entre une sonorité remarquable et des lignes épurées, pour une expérience unique.',
+            'picture' => '',
+        ],
+        [
+            'category' => 'category_Basse',
+            'brand' => 'brand_Aria Pro II',
+            'model' => 'Magna Series',
+            'type' => 'type_électrique',
+            'description' => 'L\'Aria Pro II Series Magna a une précision intense dans les basses tout en gardant une attaque punchy dans les mediums. Assez polyvalente, elle se prêtera à la plupart de vos projets.',
+            'picture' => '',
+        ],
+        [
+            'category' => 'category_Amplificateur',
+            'brand' => 'brand_Marshall',
+            'model' => 'AS50D',
+            'type' => 'type_électro-acoustique',
+            'description' => 'L\'ampli Marshall AS50D est une des meilleures références en terme d\'ampli pour guitare électro-acoustique. Il délivre 50 watts de son pur et précis, et possède des réglages pour affiner le rendu selon les goûts.',
+            'picture' => '',
+        ],
     ];
 
     public static int $equipmentIndex = 0;
