@@ -18,7 +18,7 @@ class BrandFixtures extends Fixture
         'Gibson',
         'Fender',
         'Lâg',
-        'Aria',
+        'Aria Pro II',
         'Ibanez',
         'Squier',
         'Epiphone',

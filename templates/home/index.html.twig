@@ -60,7 +60,10 @@
 					{{ service.price }}€</li>
 			</ul>
 		{% endfor %}
-		<br><small class="italic">*Les prix sont sous réserve d'un devis plus précis, établi par nos ingénieurs son.</small>
+
+		<a class="btn button-ok mb-2" href="{{ path('contact_us') }}">Demandez-nous un devis !</a>
+
+		<p class="mt-4"><small class="italic">*Les prix sont sous réserve d'un devis plus précis, établi par nos ingénieurs son.</small></p>
 
 	</div>
 {% endblock %}

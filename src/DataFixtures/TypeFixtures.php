@@ -15,6 +15,7 @@ class TypeFixtures extends Fixture
         'électronique',
         'statique',
         'dynamique',
+        'numérique',
     ];
 
     public function load(ObjectManager $manager): void
