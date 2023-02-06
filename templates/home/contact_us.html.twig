@@ -4,16 +4,32 @@
 
 {% block body %}
 
-    <div class="home">
-        <h1><span>Nous contacter</span></h1>
+<div class="home">
+    <h1><span>Nous contacter</span></h1>
 
-        <div class="container col-lg-6 mt-lg-4 bg-opacity-50 shadow-sm mx-auto pt-3 pb-3 rounded-2 text-center">
-            {{ form_start(contactForm) }}
-            {{ form_widget(contactForm) }}
-            <div class="text-center mb-4 ">
-                <button type="submit" class="btn button-ok text-white"><i class="bi bi-check-lg me-2"></i><span>Envoyer mon message</span></button>
-            </div>
-            {{ form_end(contactForm) }}
+    <p class="text-center">N'hésitez pas à nous contacter via ce formulaire si vous souhaitez un devis sur mesure ou si
+        vous aimeriez avoir plus d'informations !</p>
+
+    <div class="container col-lg-6 mt-lg-4 mx-auto pt-3 pb-3 text-center">
+        {{ form_start(contactForm) }}
+        {{ form_widget(contactForm) }}
+        <div class="text-center mb-4 ">
+            <button type="submit" class="btn button-ok text-white mt-3"><i class="bi bi-check-lg me-2"></i><span>Envoyer mon message</span>
+            </button>
+        </div>
+        {{ form_end(contactForm) }}
+    </div>
+
+    <div class="container text-center">
+        <div class="col-lg-6 mt-lg-3 mx-auto">
+            <p><strong class="second-color">Meg Studio</strong>
+            <br>17 Allée Groove
+            <br>33000 BORDEAUX</p>
+        </div>
+        <div class="col-lg-6 mt-lg-3 mx-auto">
+            <p>Téléphone : 06 28 17 25 03</p>
         </div>
     </div>
-{% endblock %}
+
+</div>
+    {% endblock %}

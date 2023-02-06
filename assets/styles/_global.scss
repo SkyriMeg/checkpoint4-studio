@@ -1,47 +1,79 @@
 body {
-    background-color: $black;
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    color: $first-color;
-    font-family: $typo;
+  background-color: $black;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: $first-color;
+  font-family: $typo;
 }
 
 .home {
-    margin-top: 3rem;
-    margin-bottom: 4rem;
-    margin-right: 3rem;
-    margin-left: 3rem;
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+  margin-right: 3rem;
+  margin-left: 3rem;
 }
 
 h1 {
-    text-align: center;
-    margin-right: 2rem;
-    margin-left: 2rem;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    color: $first-color;
+  text-align: center;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  color: $first-color;
 }
 
 h2 {
-    color: $second-color;
-    margin-top: 5rem;
+  color: $second-color;
+  margin-top: 5rem;
 }
 
 h4 {
-    color: $second-color;
+  color: $second-color;
 }
 
 .lign {
-    border-top: 1px solid $second-color;
-    width: 21.87rem;
+  border-top: 1px solid $second-color;
+  width: 21.87rem;
+}
+
+@media screen and (max-width: 634px) {
+  .lign {
+    width: 18rem;
+  }
+
+  .input-log {
+    text-align: center;
+  }
+}
+
+.first-color {
+  color: $first-color;
 }
 
 .second-color {
-    color: $second-color;
+  color: $second-color;
 }
 
 .button-ok {
-    background-color: $second-color;
+  background-color: $second-color;
+}
+
+.card {
+  background-color: $black;
+  border: $first-color;
+}
+
+.button-retour {
+  background-color: #212529;
+  color: $first-color;
+}
+
+.home {
+  btn:hover {
+    background-color: $first-color;
+    color: $black;
+    border-color: $first-color;
+  }
 }

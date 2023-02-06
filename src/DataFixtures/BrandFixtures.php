@@ -24,6 +24,7 @@ class BrandFixtures extends Fixture
         'Epiphone',
         'Roland',
         'Yamaha',
+        'Pearl',
         'DW',
         'Premier',
         'Nord',

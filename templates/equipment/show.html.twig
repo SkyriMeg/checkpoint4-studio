@@ -6,14 +6,14 @@
     <div class="home">
         <h1><strong>{{ equipment.brand.name }}</strong> {{ equipment.model }}</h1>
 
-        <div class="mb-3"><img {{ equipment.picture }} alt="{{ equipment.model }}"></div>
+        <div class="mb-3 text-center"><img src="{{ asset('build/images/') }}{{ equipment.picture }}" alt="{{ equipment.model }}" class="img-show rounded"></div>
 
         <h3 class="second-color">{{ equipment.category.name }} {{ equipment.type.name }}</h3>
         <div class="lign mb-4"></div>
 
         <p>{{ equipment.description }}</p>
 
-        <a class="btn button-ok" href="{{ path('app_equipment_presentation') }}">Retour</a>
+        <a class="btn button-ok mt-5" href="{{ path('app_equipment_presentation') }}"><i class="bi bi-arrow-return-left me-2"></i>Retour</a>
 
     </div>
 {% endblock %}

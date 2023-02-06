@@ -1,0 +1,9 @@
+.img-show {
+  max-width: 40rem;
+}
+
+@media screen and (max-width: 634px) {
+  .img-show {
+    width: 100%;
+  }
+}
