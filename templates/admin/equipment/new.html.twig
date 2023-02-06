@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvel équipement{% endblock %}
+
+{% block body %}
+    <div class="home">
+        <h1>Ajouter un nouvel équipement</h1>
+
+        <div class="container col-lg-6 mt-lg-4 mx-auto pt-3 pb-3 text-center">
+            {{ include('equipment/_form.html.twig') }}
+        </div>
+        <a class="btn button-retour mt-2" href="{{ path('app_equipment_index') }}"><i
+                    class="bi bi-arrow-return-left me-2"></i><span>Retour à la liste</span></a>
+
+    </div>
+{% endblock %}

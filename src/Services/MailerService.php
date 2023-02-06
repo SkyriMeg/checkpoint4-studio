@@ -12,13 +12,13 @@ class MailerService
     }
 
     public function sendEmail(
-        string $emailTo = 'admin@makesense.com',
+        string $emailTo = 'admin@megstudio.com',
         string $subject = 'This is the Mail subject !',
         string $content = '',
         string $text = ''
     ): void {
         $email = (new Email())
-            ->from('mailer@makesense.com')
+            ->from('mailer@megstudio.com')
             ->to($emailTo)
             ->subject($subject)
             ->text($text)

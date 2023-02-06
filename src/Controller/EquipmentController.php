@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Equipment;
 use App\Form\EquipmentType;
 use App\Repository\EquipmentRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -34,17 +35,19 @@ class EquipmentController extends AbstractController
         ]);
     }
 
-    #[Route('/', name: 'app_equipment_index', methods: ['GET'])]
+    #[IsGranted('ROLE_ADMIN')]
+    #[Route('/index', name: 'app_equipment_index', methods: ['GET'])]
     public function index(EquipmentRepository $equipmentRepository): Response
     {
         $equipments = $equipmentRepository->findAll();
 
-        return $this->render('equipment/index.html.twig', [
+        return $this->render('admin/equipment/index.html.twig', [
             'website' => 'Meg Studio',
             'equipments' => $equipments,
         ]);
     }
 
+    #[IsGranted('ROLE_ADMIN')]
     #[Route('/new', name: 'app_equipment_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EquipmentRepository $equipmentRepository): Response
     {
@@ -58,7 +61,7 @@ class EquipmentController extends AbstractController
             return $this->redirectToRoute('app_equipment_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('equipment/new.html.twig', [
+        return $this->renderForm('admin/equipment/new.html.twig', [
             'equipment' => $equipment,
             'form' => $form,
         ]);
@@ -82,6 +85,7 @@ class EquipmentController extends AbstractController
     //    ]);
     //}
 
+    #[IsGranted('ROLE_ADMIN')]
     #[Route('/{id}/edit', name: 'app_equipment_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Equipment $equipment, EquipmentRepository $equipmentRepository): Response
     {
@@ -94,12 +98,13 @@ class EquipmentController extends AbstractController
             return $this->redirectToRoute('app_equipment_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('equipment/edit.html.twig', [
+        return $this->renderForm('admin/equipment/edit.html.twig', [
             'equipment' => $equipment,
             'form' => $form,
         ]);
     }
 
+    #[IsGranted('ROLE_ADMIN')]
     #[Route('/{id}', name: 'app_equipment_delete', methods: ['POST'])]
     public function delete(Request $request, Equipment $equipment, EquipmentRepository $equipmentRepository): Response
     {

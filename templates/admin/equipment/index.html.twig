@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inventaire des équipements{% endblock %}
+
+{% block body %}
+    <div class="home">
+        <h1>Inventaire des équipements</h1>
+
+        <a class="btn button-ok mt-3 mb-4" href="{{ path('app_equipment_new') }}"><i class="bi bi-plus-lg me-1"></i>Nouvel équipement</a>
+
+        <table class="table first-color">
+            <thead>
+                <tr  class="second-color">
+                    <th>Identifiant</th>
+                    <th>Catégorie</th>
+                    <th>Marque</th>
+                    <th>Modèle</th>
+                    <th>Type</th>
+                    <th>Image</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for equipment in equipments %}
+                <tr>
+                    <td>{{ equipment.id }}</td>
+                    <td>{{ equipment.category.name }}</td>
+                    <td>{{ equipment.brand.name }}</td>
+                    <td>{{ equipment.model }}</td>
+                    <td>{{ equipment.type.name }}</td>
+                    <td>{{ equipment.picture }}</td>
+                    <td class="text-end">
+                        <a class="btn button-ok me-3" href="{{ path('app_equipment_show', {'equipmentId': equipment.id}) }}"><i class="bi bi-eye me-2"></i>Voir</a>
+                        <a class="btn btn-outline-info" href="{{ path('app_equipment_edit', {'id': equipment.id}) }}">Modifier</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">Aucun équipement trouvé</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

@@ -1,32 +1,57 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top shadow-lg-light">
-	<div class="container">
-		<a class="navbar-brand" href="/">
-			<img src="{{ asset('build/images/logo-studio.png') }}" alt="Logo Meg Studio" height="36" class="me-2">
-			<strong>Meg</strong>
-			Studio
-		</a>
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <img src="{{ asset('build/images/logo-studio.png') }}" alt="Logo Meg Studio" height="36" class="me-2">
+            <strong>Meg</strong>
+            Studio
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav ms-auto ">
-				<li class="nav-item ">
-					<a class="nav-link" href="/">Accueil</a>
-				</li>
+        {% if app.user %}
+            <div class="btn-group">
+                <button type="button" class="first-color btn dropdown-toggle" data-bs-toggle="dropdown"
+                        aria-expanded="false"><i class="bi bi-person-fill-gear me-2"></i>Administrateur
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="{{ path('app_logout') }}">Se déconnecter</a></li>
+                </ul>
+            </div>
+        {% endif %}
 
-				<li class="nav-item">
-					<a class="nav-link" href="/#tarifs">Tarifs</a>
-				</li>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto ">
+                {% if app.user %}
+                    <li class="nav-item ">
+                        <a class="nav-link" href="{{ path('app_equipment_new') }}"><i class="bi bi-plus-lg me-1"></i>Ajouter
+                            un équipement</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="{{ path('app_equipment_index') }}"><i class="bi bi-gear me-1"></i>Gestion
+                            des équipements</a>
+                    </li>
+                {% endif %}
 
-				<li class="nav-item">
-					<a class="nav-link" href="{{ path('app_equipment_presentation') }}">Equipement</a>
-				</li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="/"><i class="bi bi-house-door me-1"></i>Accueil</a>
+                </li>
 
-				<li class="nav-item">
-					<a class="nav-link" href="{{ path('contact_us') }}">Nous contacter</a>
-				</li>
-			</ul>
-		</div>
-	</div>
+                <li class="nav-item">
+                    <a class="nav-link" href="/#tarifs"><i class="bi bi-currency-euro me-1"></i>Tarifs</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_equipment_presentation') }}"><i
+                                class="bi bi-music-note me-1"></i>Equipement</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('contact_us') }}"><i class="bi bi-envelope-at ms-2 me-2"></i>Nous
+                        contacter</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </nav>
