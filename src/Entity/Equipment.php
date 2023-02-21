@@ -3,9 +3,17 @@
 namespace App\Entity;
 
 use App\Repository\EquipmentRepository;
+use DateTime;
+use DateTimeInterface;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\File;
+//Ici on importe le package Vich, que l’on utilisera sous l’alias “Vich”
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: EquipmentRepository::class)]
+#[Vich\Uploadable]
 class Equipment
 {
     #[ORM\Id]
@@ -31,8 +39,21 @@ class Equipment
     #[ORM\Column(length: 255)]
     private ?string $description = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private ?string $picture = null;
+
+    // On va créer un nouvel attribut à notre entité, qui ne sera pas lié à une colonne
+    // Tu peux d’ailleurs voir que l’attribut ORM column n’est pas spécifié car
+    // On ne rajoute pas de données de type file en bdd
+    #[Vich\UploadableField(mapping: 'picture_file', fileNameProperty: 'picture')]
+    #[Assert\File(
+        maxSize: '2M',
+        mimeTypes: ['image/jpeg', 'image/png', 'image/webp'],
+    )]
+    private ?File $pictureFile = null;
+
+    #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
+    private ?DateTimeInterface $updatedAt = null;
 
     public function getId(): ?int
     {
@@ -107,6 +128,50 @@ class Equipment
     public function setPicture(?string $picture): self
     {
         $this->picture = $picture;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of pictureFile
+     */
+    public function getPictureFile(): ?File
+    {
+        return $this->pictureFile;
+    }
+
+    /**
+     * Set the value of pictureFile
+     *
+     * @return  self
+     */
+    public function setPictureFile(File $image = null): Equipment
+    {
+        $this->pictureFile = $image;
+
+        if ($image) {
+            $this->updatedAt = new DateTime('now');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get the value of updatedAt
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * Set the value of updatedAt
+     *
+     * @return  self
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
 
         return $this;
     }

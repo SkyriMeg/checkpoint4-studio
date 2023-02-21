@@ -8,6 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class EquipmentType extends AbstractType
 {
@@ -25,14 +26,18 @@ class EquipmentType extends AbstractType
             ])
             ->add('model', TextType::class, [
                 'required' => true,
-                'label' => 'Modèle'])
+                'label' => 'Modèle'
+            ])
             ->add('description', TextareaType::class, [
                 'attr' => ['rows' => 5],
                 'label' => 'Description'
             ])
-            ->add('picture', TextType::class, [
+            ->add('pictureFile', VichFileType::class, [
                 'required' => true,
-                'label' => 'Image']);
+                'allow_delete'  => false, // default is true
+                'download_uri' => false, // default is true
+                'label' => 'Image'
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

@@ -57,12 +57,12 @@ class EquipmentController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $equipmentRepository->save($equipment, true);
+            $this->addFlash('success', 'L\'équipement a bien été ajouté !');
 
             return $this->redirectToRoute('app_equipment_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('admin/equipment/new.html.twig', [
-            'equipment' => $equipment,
             'form' => $form,
         ]);
     }
@@ -75,7 +75,7 @@ class EquipmentController extends AbstractController
         ]);
     }
 
-//@TODO Créer les pages par catégorie
+    //@TODO Créer les pages par catégorie
     //#[Route('/softwares', name: 'app_equipment_show_softwares', methods: ['GET'])]
     //public function softwares_pres(EquipmentRepository $equipmentRepository): Response
     //{
