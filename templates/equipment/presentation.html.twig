@@ -1,210 +1,206 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Equipement - {{ website }}{% endblock %}
+{% block title %}Equipement -
+	{{ website }}
+{% endblock %}
 
 {% block body %}
-    <div class="home">
-        <div class="container">
-            <div class="text-center">
-                <img src="https://images.pexels.com/photos/417451/pexels-photo-417451.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                     alt="Guitares" class="home-img rounded">
-                <h1 class="mb-5"><strong>Nos</strong> équipements</h1>
-            </div>
+	<div class="home">
+		<div class="container">
+			<div class="text-center">
+				<img src="https://images.pexels.com/photos/417451/pexels-photo-417451.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Guitares" class="home-img rounded">
+				<h1 class="mb-5">
+					<strong>Nos</strong>
+					équipements</h1>
+			</div>
 
 
-            <h2 class="text-uppercase">Nos Logiciels</h2>
-            <div class="lign mb-4"></div>
-            <div class="row custom-line">
-                {% for equipment in equipments %}
-                    {% if equipment.category.name is same as 'Logiciel' %}
+			<h2 class="text-uppercase">Nos Logiciels</h2>
+			<div class="lign mb-4"></div>
+			<div class="row custom-line">
+				{% for equipment in equipments %}
+					{% if equipment.category.name is same as 'Logiciel' %}
 
-                        <div class="col-sm-10 col-md-6 col-lg-4 mt-2 mb-1">
-                            <div class="card h-100 px-3 text-white border">
-                                <div class="card-header bg-transparent border-light">
-                                    {{ equipment.category.name }} {{ equipment.type.name }}
-                                </div>
-                                <div class="card-body">
-                                    <strong class="second-color">{{ equipment.brand.name }}</strong>
-                                    <h5 class="card-title">{{ equipment.model }}</h5>
-                                </div>
-                                <div class="text-center">
-                                    <img src="{{ asset('build/images/') }}{{ equipment.picture }}"
-                                         alt="{{ equipment.brand.name }}{{ equipment.model }}" class="img-pres overflow-hidden rounded">
-                                </div>
-                                <br><a href="{{ path('app_equipment_show', {equipmentId: equipment.id }) }}"
-                                       class="stretched-link"></a>
-                            </div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
-
-
-            <h2 class="text-uppercase">Nos microphones</h2>
-            <div class="lign mb-4"></div>
-            <div class="row custom-line">
-                {% for equipment in equipments %}
-                    {% if equipment.category.name is same as 'Microphone' %}
-
-                        <div class="col-sm-10 col-md-6 col-lg-4 mt-2 mb-1">
-                            <div class="card h-100 px-3 text-white border">
-                                <div class="card-header bg-transparent border-light">
-                                    {{ equipment.category.name }} {{ equipment.type.name }}
-                                </div>
-                                <div class="card-body">
-                                    <strong class="second-color">{{ equipment.brand.name }}</strong>
-                                    <h5 class="card-title">{{ equipment.model }}</h5>
-                                </div>
-                                <div class="text-center">
-                                    <img src="{{ asset('build/images/') }}{{ equipment.picture }}"
-                                         alt="{{ equipment.brand.name }}{{ equipment.model }}" class="img-pres overflow-hidden rounded">
-                                </div>
-                                <br><a href="{{ path('app_equipment_show', {equipmentId: equipment.id }) }}"
-                                       class="stretched-link"></a>
-                            </div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
+						<div class="col-sm-10 col-md-6 col-lg-4 mt-2 mb-1">
+							<div class="card h-100 px-3 text-white border">
+								<div class="card-header bg-transparent border-light">
+									{{ equipment.category.name }}
+									{{ equipment.type.name }}
+								</div>
+								<div class="card-body">
+									<strong class="second-color">{{ equipment.brand.name }}</strong>
+									<h5 class="card-title">{{ equipment.model }}</h5>
+								</div>
+								<div class="text-center">
+									<img src="{{ vich_uploader_asset(equipment) }}" alt="{{ equipment.brand.name }}{{ equipment.model }}" class="img-pres overflow-hidden rounded">
+								</div>
+								<br><a href="{{ path('app_equipment_show', {equipmentId: equipment.id }) }}" class="stretched-link"></a>
+							</div>
+						</div>
+					{% endif %}
+				{% endfor %}
+			</div>
 
 
-            <h2 class="text-uppercase">Nos guitares</h2>
-            <div class="lign mb-4"></div>
-            <div class="row custom-line">
-                {% for equipment in equipments %}
-                    {% if equipment.category.name is same as 'Guitare' %}
+			<h2 class="text-uppercase">Nos microphones</h2>
+			<div class="lign mb-4"></div>
+			<div class="row custom-line">
+				{% for equipment in equipments %}
+					{% if equipment.category.name is same as 'Microphone' %}
 
-                        <div class="col-sm-10 col-md-6 col-lg-4 mt-2 mb-1 ">
-                            <div class="card h-100 px-3 text-white border">
-                                <div class="card-header bg-transparent border-light">
-                                    {{ equipment.category.name }} {{ equipment.type.name }}
-                                </div>
-                                <div class="card-body">
-                                    <strong class="second-color">{{ equipment.brand.name }}</strong>
-                                    <h5 class="card-title">{{ equipment.model }}</h5>
-                                </div>
-                                <div class="text-center">
-                                    <img src="{{ asset('build/images/') }}{{ equipment.picture }}"
-                                         alt="{{ equipment.brand.name }}{{ equipment.model }}" class="img-pres overflow-hidden rounded">
-                                </div>
-                                <br><a href="{{ path('app_equipment_show', {equipmentId: equipment.id }) }}"
-                                       class="stretched-link"></a>
-                            </div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
-
-
-            <h2 class="text-uppercase">Nos basses</h2>
-            <div class="lign mb-4"></div>
-            <div class="row custom-line">
-                {% for equipment in equipments %}
-                    {% if equipment.category.name is same as 'Basse' %}
-
-                        <div class="col-sm-10 col-md-6 col-lg-4 mt-2 mb-1">
-                            <div class="card h-100 px-3 text-white border">
-                                <div class="card-header bg-transparent border-light">
-                                    {{ equipment.category.name }} {{ equipment.type.name }}
-                                </div>
-                                <div class="card-body">
-                                    <strong class="second-color">{{ equipment.brand.name }}</strong>
-                                    <h5 class="card-title">{{ equipment.model }}</h5>
-                                </div>
-                                <div class="text-center">
-                                    <img src="{{ asset('build/images/') }}{{ equipment.picture }}"
-                                         alt="{{ equipment.brand.name }}{{ equipment.model }}" class="img-pres overflow-hidden rounded">
-                                </div>
-                                <br><a href="{{ path('app_equipment_show', {equipmentId: equipment.id }) }}"
-                                       class="stretched-link"></a>
-                            </div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
+						<div class="col-sm-10 col-md-6 col-lg-4 mt-2 mb-1">
+							<div class="card h-100 px-3 text-white border">
+								<div class="card-header bg-transparent border-light">
+									{{ equipment.category.name }}
+									{{ equipment.type.name }}
+								</div>
+								<div class="card-body">
+									<strong class="second-color">{{ equipment.brand.name }}</strong>
+									<h5 class="card-title">{{ equipment.model }}</h5>
+								</div>
+								<div class="text-center">
+									<img src="{{ vich_uploader_asset(equipment) }}" alt="{{ equipment.brand.name }}{{ equipment.model }}" class="img-pres overflow-hidden rounded">
+								</div>
+								<br><a href="{{ path('app_equipment_show', {equipmentId: equipment.id }) }}" class="stretched-link"></a>
+							</div>
+						</div>
+					{% endif %}
+				{% endfor %}
+			</div>
 
 
-            <h2 class="text-uppercase">Nos batteries</h2>
-            <div class="lign mb-4"></div>
-            <div class="row custom-line">
-                {% for equipment in equipments %}
-                    {% if equipment.category.name is same as 'Batterie' %}
+			<h2 class="text-uppercase">Nos guitares</h2>
+			<div class="lign mb-4"></div>
+			<div class="row custom-line">
+				{% for equipment in equipments %}
+					{% if equipment.category.name is same as 'Guitare' %}
 
-                        <div class="col-sm-10 col-md-6 col-lg-4 mt-2 mb-1">
-                            <div class="card h-100 px-3 text-white border">
-                                <div class="card-header bg-transparent border-light">
-                                    {{ equipment.category.name }} {{ equipment.type.name }}
-                                </div>
-                                <div class="card-body">
-                                    <strong class="second-color">{{ equipment.brand.name }}</strong>
-                                    <h5 class="card-title">{{ equipment.model }}</h5>
-                                </div>
-                                <div class="text-center">
-                                    <img src="{{ asset('build/images/') }}{{ equipment.picture }}"
-                                         alt="{{ equipment.brand.name }}{{ equipment.model }}" class="img-pres overflow-hidden rounded">
-                                </div>
-                                <br><a href="{{ path('app_equipment_show', {equipmentId: equipment.id }) }}"
-                                       class="stretched-link"></a>
-                            </div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
+						<div class="col-sm-10 col-md-6 col-lg-4 mt-2 mb-1 ">
+							<div class="card h-100 px-3 text-white border">
+								<div class="card-header bg-transparent border-light">
+									{{ equipment.category.name }}
+									{{ equipment.type.name }}
+								</div>
+								<div class="card-body">
+									<strong class="second-color">{{ equipment.brand.name }}</strong>
+									<h5 class="card-title">{{ equipment.model }}</h5>
+								</div>
+								<div class="text-center">
+									<img src="{{ vich_uploader_asset(equipment) }}" alt="{{ equipment.brand.name }}{{ equipment.model }}" class="img-pres overflow-hidden rounded">
+								</div>
+								<br><a href="{{ path('app_equipment_show', {equipmentId: equipment.id }) }}" class="stretched-link"></a>
+							</div>
+						</div>
+					{% endif %}
+				{% endfor %}
+			</div>
 
 
-            <h2 class="text-uppercase">Nos pianos</h2>
-            <div class="lign mb-4"></div>
-            <div class="row custom-line">
-                {% for equipment in equipments %}
-                    {% if equipment.category.name is same as 'Piano' %}
+			<h2 class="text-uppercase">Nos basses</h2>
+			<div class="lign mb-4"></div>
+			<div class="row custom-line">
+				{% for equipment in equipments %}
+					{% if equipment.category.name is same as 'Basse' %}
 
-                        <div class="col-sm-10 col-md-6 col-lg-4 mt-2 mb-1">
-                            <div class="card h-100 px-3 text-white border">
-                                <div class="card-header bg-transparent border-light">
-                                    {{ equipment.category.name }} {{ equipment.type.name }}
-                                </div>
-                                <div class="card-body">
-                                    <strong class="second-color">{{ equipment.brand.name }}</strong>
-                                    <h5 class="card-title">{{ equipment.model }}</h5>
-                                </div>
-                                <div class="text-center">
-                                    <img src="{{ asset('build/images/') }}{{ equipment.picture }}"
-                                         alt="{{ equipment.brand.name }}{{ equipment.model }}" class="img-pres overflow-hidden rounded">
-                                </div>
-                                <br><a href="{{ path('app_equipment_show', {equipmentId: equipment.id }) }}"
-                                       class="stretched-link"></a>
-                            </div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
+						<div class="col-sm-10 col-md-6 col-lg-4 mt-2 mb-1">
+							<div class="card h-100 px-3 text-white border">
+								<div class="card-header bg-transparent border-light">
+									{{ equipment.category.name }}
+									{{ equipment.type.name }}
+								</div>
+								<div class="card-body">
+									<strong class="second-color">{{ equipment.brand.name }}</strong>
+									<h5 class="card-title">{{ equipment.model }}</h5>
+								</div>
+								<div class="text-center">
+									<img src="{{ vich_uploader_asset(equipment) }}" alt="{{ equipment.brand.name }}{{ equipment.model }}" class="img-pres overflow-hidden rounded">
+								</div>
+								<br><a href="{{ path('app_equipment_show', {equipmentId: equipment.id }) }}" class="stretched-link"></a>
+							</div>
+						</div>
+					{% endif %}
+				{% endfor %}
+			</div>
 
-            <h2 class="text-uppercase">Nos amplificateurs</h2>
-            <div class="lign mb-4"></div>
-            <div class="row custom-line">
-                {% for equipment in equipments %}
-                    {% if equipment.category.name is same as 'Amplificateur' %}
 
-                        <div class="col-sm-10 col-md-6 col-lg-4 mt-2 mb-1">
-                            <div class="card h-100 px-3 text-white border">
-                                <div class="card-header bg-transparent border-light">
-                                    {{ equipment.category.name }} {{ equipment.type.name }}
-                                </div>
-                                <div class="card-body">
-                                    <strong class="second-color">{{ equipment.brand.name }}</strong>
-                                    <h5 class="card-title">{{ equipment.model }}</h5>
-                                </div>
-                                <div class="text-center">
-                                    <img src="{{ asset('build/images/') }}{{ equipment.picture }}"
-                                         alt="{{ equipment.brand.name }}{{ equipment.model }}" class="img-pres overflow-hidden rounded">
-                                </div>
-                                <br><a href="{{ path('app_equipment_show', {equipmentId: equipment.id }) }}"
-                                       class="stretched-link"></a>
-                            </div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
-        </div>
-    </div>
+			<h2 class="text-uppercase">Nos batteries</h2>
+			<div class="lign mb-4"></div>
+			<div class="row custom-line">
+				{% for equipment in equipments %}
+					{% if equipment.category.name is same as 'Batterie' %}
+
+						<div class="col-sm-10 col-md-6 col-lg-4 mt-2 mb-1">
+							<div class="card h-100 px-3 text-white border">
+								<div class="card-header bg-transparent border-light">
+									{{ equipment.category.name }}
+									{{ equipment.type.name }}
+								</div>
+								<div class="card-body">
+									<strong class="second-color">{{ equipment.brand.name }}</strong>
+									<h5 class="card-title">{{ equipment.model }}</h5>
+								</div>
+								<div class="text-center">
+									<img src="{{ vich_uploader_asset(equipment) }}" alt="{{ equipment.brand.name }}{{ equipment.model }}" class="img-pres overflow-hidden rounded">
+								</div>
+								<br><a href="{{ path('app_equipment_show', {equipmentId: equipment.id }) }}" class="stretched-link"></a>
+							</div>
+						</div>
+					{% endif %}
+				{% endfor %}
+			</div>
+
+
+			<h2 class="text-uppercase">Nos pianos</h2>
+			<div class="lign mb-4"></div>
+			<div class="row custom-line">
+				{% for equipment in equipments %}
+					{% if equipment.category.name is same as 'Piano' %}
+
+						<div class="col-sm-10 col-md-6 col-lg-4 mt-2 mb-1">
+							<div class="card h-100 px-3 text-white border">
+								<div class="card-header bg-transparent border-light">
+									{{ equipment.category.name }}
+									{{ equipment.type.name }}
+								</div>
+								<div class="card-body">
+									<strong class="second-color">{{ equipment.brand.name }}</strong>
+									<h5 class="card-title">{{ equipment.model }}</h5>
+								</div>
+								<div class="text-center">
+									<img src="{{ vich_uploader_asset(equipment) }}" alt="{{ equipment.brand.name }}{{ equipment.model }}" class="img-pres overflow-hidden rounded">
+								</div>
+								<br><a href="{{ path('app_equipment_show', {equipmentId: equipment.id }) }}" class="stretched-link"></a>
+							</div>
+						</div>
+					{% endif %}
+				{% endfor %}
+			</div>
+
+			<h2 class="text-uppercase">Nos amplificateurs</h2>
+			<div class="lign mb-4"></div>
+			<div class="row custom-line">
+				{% for equipment in equipments %}
+					{% if equipment.category.name is same as 'Amplificateur' %}
+
+						<div class="col-sm-10 col-md-6 col-lg-4 mt-2 mb-1">
+							<div class="card h-100 px-3 text-white border">
+								<div class="card-header bg-transparent border-light">
+									{{ equipment.category.name }}
+									{{ equipment.type.name }}
+								</div>
+								<div class="card-body">
+									<strong class="second-color">{{ equipment.brand.name }}</strong>
+									<h5 class="card-title">{{ equipment.model }}</h5>
+								</div>
+								<div class="text-center">
+									<img src="{{ vich_uploader_asset(equipment) }}" alt="{{ equipment.brand.name }}{{ equipment.model }}" class="img-pres overflow-hidden rounded">
+								</div>
+								<br><a href="{{ path('app_equipment_show', {equipmentId: equipment.id }) }}" class="stretched-link"></a>
+							</div>
+						</div>
+					{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+	</div>
 {% endblock %}
