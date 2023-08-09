@@ -16,13 +16,16 @@ class EquipmentType extends AbstractType
     {
         $builder
             ->add('category', null, [
-                'choice_label' => 'name'
+                'choice_label' => 'name',
+                'label' => 'Catégorie'
             ])
             ->add('type', null, [
-                'choice_label' => 'name'
+                'choice_label' => 'name',
+                'label' => 'Type'
             ])
             ->add('brand', null, [
-                'choice_label' => 'name'
+                'choice_label' => 'name',
+                'label' => 'Marque'
             ])
             ->add('model', TextType::class, [
                 'required' => true,

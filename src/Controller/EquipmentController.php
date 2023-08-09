@@ -18,20 +18,10 @@ class EquipmentController extends AbstractController
     public function presentation(EquipmentRepository $equipmentRepository): Response
     {
         $equipments = $equipmentRepository->findAll();
-        //@TODO RECUPERER LES IMAGES DE LA BDD POUR LES AFFICHER
-        // Récupération de l'entité contenant l'image à partir de la base de données
-        //$image = $this->getDoctrine()
-        //    ->getRepository(Equipment::class)
-        //    ->findAll();
-
-        // Stockage des données de l'image dans une variable
-        //$imageData = base64_encode($image->getData());
-
 
         return $this->render('equipment/presentation.html.twig', [
             'website' => 'Meg Studio',
             'equipments' => $equipments,
-            //'image' => $imageData,
         ]);
     }
 
