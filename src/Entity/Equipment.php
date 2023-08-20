@@ -34,9 +34,15 @@ class Equipment
     private ?Type $type = null;
 
     #[ORM\Column(length: 100)]
+    #[Assert\NotBlank(message: 'Veuillez préciser le modèle.')]
     private ?string $model = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: 'Veuillez écrire une description.')]
+    #[Assert\Length(
+        max: 255,
+        maxMessage: 'La description saisie est trop longue, elle ne devrait pas dépasser {{ limit }} caractères.',
+    )]
     private ?string $description = null;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
