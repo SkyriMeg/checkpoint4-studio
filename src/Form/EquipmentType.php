@@ -36,7 +36,7 @@ class EquipmentType extends AbstractType
                 'label' => 'Description'
             ])
             ->add('pictureFile', VichFileType::class, [
-                'required' => true,
+                'required' => false,
                 'allow_delete'  => false, // default is true
                 'download_uri' => false, // default is true
                 'label' => 'Image'

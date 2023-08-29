@@ -1,19 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Modifier un équipement{% endblock %}
+{% block title %}Modifier un équipement
+{% endblock %}
 
 {% block body %}
-    <div class="home">
-        <h1>Modifier un équipement</h1>
+	<div class="home">
+		<h1>Modifier un équipement</h1>
 
-        <div class="container col-lg-6 mt-lg-4 mx-auto pt-3 pb-3 text-center">
-            {{ include('equipment/_form.html.twig', {'button_label': 'Enregistrer les modifications'}) }}
-        </div>
-        <div class="text-center">
-            {{ include('admin/equipment/_delete_form.html.twig') }}
-        </div>
+		<div class="container col-lg-6 mt-lg-4 mx-auto pt-3 pb-3 text-center">
+			{{ include('equipment/_form.html.twig', {'button_label': 'Enregistrer les modifications'}) }}
+		</div>
+		<div class="text-center">
+			{{ include('admin/equipment/_delete_form.html.twig') }}
+		</div>
 
-        <a class="btn button-retour mt-3 mb-3" href="{{ path('app_equipment_index') }}"><i
-                    class="bi bi-arrow-return-left me-2"></i><span>Retour à la liste</span></a>
-    </div>
+		<a class="btn button-retour mt-3 mb-3" href="{{ path('app_equipment_index') }}">
+			<i class="bi bi-arrow-return-left me-2"></i>
+			<span>Retour à la liste</span>
+		</a>
+	</div>
 {% endblock %}

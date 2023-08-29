@@ -82,6 +82,8 @@ class EquipmentController extends AbstractController
         $form = $this->createForm(EquipmentType::class, $equipment);
         $form->handleRequest($request);
 
+        $originalPicture = $equipment->getPicture();
+
         if ($form->isSubmitted() && $form->isValid()) {
             $equipmentRepository->save($equipment, true);
 
@@ -91,6 +93,7 @@ class EquipmentController extends AbstractController
         return $this->renderForm('admin/equipment/edit.html.twig', [
             'equipment' => $equipment,
             'form' => $form,
+            'originalPicture' => $originalPicture,
         ]);
     }
 
