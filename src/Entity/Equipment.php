@@ -49,8 +49,8 @@ class Equipment
     private ?string $picture = null;
 
     // On va créer un nouvel attribut à notre entité, qui ne sera pas lié à une colonne
-    // Tu peux d’ailleurs voir que l’attribut ORM column n’est pas spécifié car
-    // On ne rajoute pas de données de type file en bdd
+    // L’attribut ORM column n’est pas spécifié car
+    // On ne rajoute pas de données de type file en BDD
     #[Vich\UploadableField(mapping: 'picture_file', fileNameProperty: 'picture')]
     #[Assert\File(
         maxSize: '2M',
