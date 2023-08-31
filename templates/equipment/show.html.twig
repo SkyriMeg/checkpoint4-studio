@@ -9,7 +9,15 @@
 			<strong>{{ equipment.brand.name }}</strong>
 			{{ equipment.model }}</h1>
 
-		<div class="mb-3 text-center"><img src="{{ vich_uploader_asset(equipment) }}" alt="{{ equipment.model }}" class="img-show rounded"></div>
+		{% if equipment.picture is not empty %}
+			<div class="mb-3 text-center">
+				<img src="{{ vich_uploader_asset(equipment) }}" alt="{{ equipment.model }}" class="img-show rounded">
+			</div>
+		{% else %}
+			<div class="mb-3 text-center">
+				<img src="https://images.pexels.com/photos/733853/pexels-photo-733853.jpeg" alt="Image d'illustration" class="img-pres overflow-hidden w-75 rounded">
+			</div>
+		{% endif %}
 
 		<h3 class="second-color">{{ equipment.category.name }}
 			{{ equipment.type.name }}</h3>

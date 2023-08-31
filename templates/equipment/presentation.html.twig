@@ -31,9 +31,17 @@
 									<strong class="second-color">{{ equipment.brand.name }}</strong>
 									<h5 class="card-title">{{ equipment.model }}</h5>
 								</div>
-								<div class="text-center">
-									<img src="{{ vich_uploader_asset(equipment) }}" alt="{{ equipment.brand.name }}{{ equipment.model }}" class="img-pres overflow-hidden rounded">
-								</div>
+
+								{% if equipment.picture is not empty %}
+									<div class="text-center">
+										<img src="{{ vich_uploader_asset(equipment) }}" alt="{{ equipment.brand.name }}{{ equipment.model }}" class="img-pres overflow-hidden rounded">
+									</div>
+								{% else %}
+									<div class="text-center">
+										<img src="https://images.pexels.com/photos/733853/pexels-photo-733853.jpeg" alt="Image d'illustration" class="img-pres overflow-hidden rounded">
+									</div>
+								{% endif %}
+
 								<br><a href="{{ path('app_equipment_show', {equipmentId: equipment.id }) }}" class="stretched-link"></a>
 							</div>
 						</div>
@@ -58,9 +66,17 @@
 									<strong class="second-color">{{ equipment.brand.name }}</strong>
 									<h5 class="card-title">{{ equipment.model }}</h5>
 								</div>
-								<div class="text-center">
-									<img src="{{ vich_uploader_asset(equipment) }}" alt="{{ equipment.brand.name }}{{ equipment.model }}" class="img-pres overflow-hidden rounded">
-								</div>
+
+								{% if equipment.picture is not empty %}
+									<div class="text-center">
+										<img src="{{ vich_uploader_asset(equipment) }}" alt="{{ equipment.brand.name }}{{ equipment.model }}" class="img-pres overflow-hidden rounded">
+									</div>
+								{% else %}
+									<div class="text-center">
+										<img src="https://images.pexels.com/photos/733853/pexels-photo-733853.jpeg" alt="Image d'illustration" class="img-pres overflow-hidden rounded">
+									</div>
+								{% endif %}
+
 								<br><a href="{{ path('app_equipment_show', {equipmentId: equipment.id }) }}" class="stretched-link"></a>
 							</div>
 						</div>
@@ -85,9 +101,17 @@
 									<strong class="second-color">{{ equipment.brand.name }}</strong>
 									<h5 class="card-title">{{ equipment.model }}</h5>
 								</div>
-								<div class="text-center">
-									<img src="{{ vich_uploader_asset(equipment) }}" alt="{{ equipment.brand.name }}{{ equipment.model }}" class="img-pres overflow-hidden rounded">
-								</div>
+
+								{% if equipment.picture is not empty %}
+									<div class="text-center">
+										<img src="{{ vich_uploader_asset(equipment) }}" alt="{{ equipment.brand.name }}{{ equipment.model }}" class="img-pres overflow-hidden rounded">
+									</div>
+								{% else %}
+									<div class="text-center">
+										<img src="https://images.pexels.com/photos/733853/pexels-photo-733853.jpeg" alt="Image d'illustration" class="img-pres overflow-hidden rounded">
+									</div>
+								{% endif %}
+
 								<br><a href="{{ path('app_equipment_show', {equipmentId: equipment.id }) }}" class="stretched-link"></a>
 							</div>
 						</div>
@@ -112,9 +136,17 @@
 									<strong class="second-color">{{ equipment.brand.name }}</strong>
 									<h5 class="card-title">{{ equipment.model }}</h5>
 								</div>
-								<div class="text-center">
-									<img src="{{ vich_uploader_asset(equipment) }}" alt="{{ equipment.brand.name }}{{ equipment.model }}" class="img-pres overflow-hidden rounded">
-								</div>
+
+								{% if equipment.picture is not empty %}
+									<div class="text-center">
+										<img src="{{ vich_uploader_asset(equipment) }}" alt="{{ equipment.brand.name }}{{ equipment.model }}" class="img-pres overflow-hidden rounded">
+									</div>
+								{% else %}
+									<div class="text-center">
+										<img src="https://images.pexels.com/photos/733853/pexels-photo-733853.jpeg" alt="Image d'illustration" class="img-pres overflow-hidden rounded">
+									</div>
+								{% endif %}
+
 								<br><a href="{{ path('app_equipment_show', {equipmentId: equipment.id }) }}" class="stretched-link"></a>
 							</div>
 						</div>
@@ -139,9 +171,17 @@
 									<strong class="second-color">{{ equipment.brand.name }}</strong>
 									<h5 class="card-title">{{ equipment.model }}</h5>
 								</div>
-								<div class="text-center">
-									<img src="{{ vich_uploader_asset(equipment) }}" alt="{{ equipment.brand.name }}{{ equipment.model }}" class="img-pres overflow-hidden rounded">
-								</div>
+
+								{% if equipment.picture is not empty %}
+									<div class="text-center">
+										<img src="{{ vich_uploader_asset(equipment) }}" alt="{{ equipment.brand.name }}{{ equipment.model }}" class="img-pres overflow-hidden rounded">
+									</div>
+								{% else %}
+									<div class="text-center">
+										<img src="https://images.pexels.com/photos/733853/pexels-photo-733853.jpeg" alt="Image d'illustration" class="img-pres overflow-hidden rounded">
+									</div>
+								{% endif %}
+
 								<br><a href="{{ path('app_equipment_show', {equipmentId: equipment.id }) }}" class="stretched-link"></a>
 							</div>
 						</div>
@@ -166,9 +206,17 @@
 									<strong class="second-color">{{ equipment.brand.name }}</strong>
 									<h5 class="card-title">{{ equipment.model }}</h5>
 								</div>
-								<div class="text-center">
-									<img src="{{ vich_uploader_asset(equipment) }}" alt="{{ equipment.brand.name }}{{ equipment.model }}" class="img-pres overflow-hidden rounded">
-								</div>
+
+								{% if equipment.picture is not empty %}
+									<div class="text-center">
+										<img src="{{ vich_uploader_asset(equipment) }}" alt="{{ equipment.brand.name }}{{ equipment.model }}" class="img-pres overflow-hidden rounded">
+									</div>
+								{% else %}
+									<div class="text-center">
+										<img src="https://images.pexels.com/photos/733853/pexels-photo-733853.jpeg" alt="Image d'illustration" class="img-pres overflow-hidden rounded">
+									</div>
+								{% endif %}
+
 								<br><a href="{{ path('app_equipment_show', {equipmentId: equipment.id }) }}" class="stretched-link"></a>
 							</div>
 						</div>
@@ -192,9 +240,17 @@
 									<strong class="second-color">{{ equipment.brand.name }}</strong>
 									<h5 class="card-title">{{ equipment.model }}</h5>
 								</div>
-								<div class="text-center">
-									<img src="{{ vich_uploader_asset(equipment) }}" alt="{{ equipment.brand.name }}{{ equipment.model }}" class="img-pres overflow-hidden rounded">
-								</div>
+
+								{% if equipment.picture is not empty %}
+									<div class="text-center">
+										<img src="{{ vich_uploader_asset(equipment) }}" alt="{{ equipment.brand.name }}{{ equipment.model }}" class="img-pres overflow-hidden rounded">
+									</div>
+								{% else %}
+									<div class="text-center">
+										<img src="https://images.pexels.com/photos/733853/pexels-photo-733853.jpeg" alt="Image d'illustration" class="img-pres overflow-hidden rounded">
+									</div>
+								{% endif %}
+
 								<br><a href="{{ path('app_equipment_show', {equipmentId: equipment.id }) }}" class="stretched-link"></a>
 							</div>
 						</div>
